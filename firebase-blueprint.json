@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "AppState": {
+      "title": "AppState",
+      "description": "The complete global state of the WM2 Produções platform, containing all information about classes (turmas), students, financial status, events, polls, and media uploads.",
+      "type": "object",
+      "properties": {
+        "turmas": {
+          "type": "array",
+          "description": "List of student classes/groups (Turmas)"
+        },
+        "formandos": {
+          "type": "array",
+          "description": "List of all active and pending students (Formandos)"
+        },
+        "parcelas": {
+          "type": "array",
+          "description": "List of payment installments (Parcelas)"
+        },
+        "eventos": {
+          "type": "array",
+          "description": "List of events and schedules (Eventos)"
+        },
+        "enquetes": {
+          "type": "array",
+          "description": "List of opinion polls and surveys (Enquetes)"
+        },
+        "fotos": {
+          "type": "array",
+          "description": "List of uploaded photographs in the shared media gallery (Fotos)"
+        },
+        "mural": {
+          "type": "array",
+          "description": "List of messages and announcements posted on the community wall (Mural)"
+        },
+        "fornecedores": {
+          "type": "array",
+          "description": "List of linked vendors, caterers, security, and event suppliers (Fornecedores)"
+        },
+        "pacotes": {
+          "type": "array",
+          "description": "Customized student attendance/registration packages (Pacotes)"
+        },
+        "reunioes": {
+          "type": "array",
+          "description": "List of scheduled meetings between administrators and graduation committees"
+        },
+        "theme": {
+          "type": "string",
+          "enum": ["light", "dark"],
+          "description": "User interface color theme preference ('light' or 'dark') for the Admin Panel and platform."
+        }
+      },
+      "required": [
+        "turmas",
+        "formandos",
+        "parcelas",
+        "eventos",
+        "enquetes",
+        "fotos",
+        "mural",
+        "fornecedores",
+        "pacotes",
+        "reunioes"
+      ]
+    }
+  },
+  "firestore": {
+    "/app_state/{docId}": {
+      "schema": "AppState",
+      "description": "The document path housing the real-time application database snapshot (usually 'app_state/current')."
+    }
+  }
+}
