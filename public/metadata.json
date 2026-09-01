@@ -1,6 +1,0 @@
-{
-  "name": "WM2 Produções & Eventos",
-  "description": "Plataforma premium para gestão de formaturas e eventos - Portal do Administrador, Comissão e Formando",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
